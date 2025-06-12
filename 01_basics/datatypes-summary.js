@@ -80,3 +80,6 @@ userTwo.email="hitesh@google.com"
 console.log(userOne.email);
 console.log(userTwo.email);//value changed in heap and gives same output for both
 
+
+const naam="rana"
+console.log(typeof naam)
