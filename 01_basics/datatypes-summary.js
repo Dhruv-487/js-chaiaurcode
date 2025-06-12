@@ -39,10 +39,44 @@ const myFunction=function(){
     console.log("Hello World");
 }
 
-console.log(typeof bigNumber);
-console.log(typeof outsideTemp);//"object" return krega  null ka type
+// console.log(typeof bigNumber);
+// console.log(typeof outsideTemp);//"object" return krega  null ka type
 
-console.log(typeof myFunction);
+// console.log(typeof myFunction);
 
 // jitte bhi non primitive type hai inka return type object is aata hai,
 // idhr function ka function hi ara hai but in actual it is function-object
+
+
+
+//********************************************************************//
+
+// Stack(Primitive) , Heap(Non-primitive)
+
+let myYoutubeName="hiteshchdotcom"
+
+let anotherName=myYoutubeName
+anotherName="chaiaurcode"
+
+
+// console.log(myYoutubeName);
+// console.log(anotherName);
+
+
+// ye sab variables stack me save hote hai and jab call by value hota hai to uski ek copy pass ho jati hai
+
+let userOne={
+    email:"user@google.com",
+    upi:"user@ybl"
+}
+// the data inside the bracket will go into the heap and it is call by reference
+// userOne bhi stack m hoga and usko direct reference milega direct heap me stored data se
+
+let userTwo=userOne//isiko bhi same pehle vale ka reference mil jayega
+
+userTwo.email="hitesh@google.com"
+
+
+console.log(userOne.email);
+console.log(userTwo.email);//value changed in heap and gives same output for both
+
