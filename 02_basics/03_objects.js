@@ -4,8 +4,8 @@
 //constructor se hmesha singleton bnta hai
 
 
-//object literals
 
+//object literals
 // {}-object
 // ye keys automatically string ki tarah store ho rhi hai
 const mySym=Symbol("key1")
