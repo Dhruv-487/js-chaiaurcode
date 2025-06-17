@@ -1,4 +1,4 @@
-// const tinderUser=new Object()//singleton object
+ // const tinderUser=new Object()//singleton object
 
 const tinderUser={}//non-singleton object
 
@@ -59,13 +59,68 @@ const users=[
 
 ]
 
-console.log(users[1].email)
+// console.log(users[1].email)
 
-console.log(tinderUser);
+// console.log(tinderUser);
 
-  console.log(Object.keys(tinderUser));//datatype array
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+//   console.log(Object.keys(tinderUser));//datatype array
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));//for checking any prop
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));//for checking any prop
 
+
+
+
+
+
+
+// ***********************************************************************
+
+
+const course={
+    coursename:"js in hindi",
+    price:"999",
+    courseInstructor:"Hitesh"
+}
+
+
+// console.log(course.courseInstructor);
+
+
+// kha se values extract krni hai vo equals to ke bad ayega and ky krna hai vo {} isme ayega
+const {courseInstructor:instructor} =course
+
+// agr hme lgra hai ki courseInstructor kafi bada nam hai to hm isko : iske bad likhkr short me bhi call kr skte hai , same value ayegi
+// console.log(courseInstructor);
+
+// console.log(instructor);
+
+
+// {}->means destructuring ki jari hai 
+
+
+
+
+// API-apn kam kisi or ke sir pe dal dena is API , API is basically hmare papss kuch values ati hai backend se hm kaise un value ko likhte h
+//values ati h json structure m
+
+
+//json-object hi h 
+//json k str k andr keys bhi usually string hoti hai , and values bhi string hi hoti h
+
+/*
+{
+    "name":"hitesh",
+    "coursename":"js in hindi",
+    "price":"free"
+
+}
+*/
+
+//array format api
+[
+    {},
+    {},
+    {}
+]
