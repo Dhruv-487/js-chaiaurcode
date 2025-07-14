@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Chai aur JS</h1>
+    <button id="stop">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //ye event chlta jayega isko koii rok nhi raha hai
+    // setInterval(function(){
+    //     console.log("Hitesh",Date.now());
+    // },1000)
+
+    const sayDate=function(str){
+        console.log(str,Date.now());
+    }
+
+    const intervalId=setInterval(sayDate,1000,"hi");
+    //ab ye bhi chlta jara hai isko rokne ka bhi koi trika hona chaiye na
+
+    clearInterval(intervalId);//ab ye run ni krega memory free out hogyi h
+</script>
+</html>

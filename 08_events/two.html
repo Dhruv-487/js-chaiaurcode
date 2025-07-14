@@ -10,8 +10,36 @@
     <button id="stop">Stop</button>
 </body>
 <script>
-    setTimeout(function(){
-        console.log("Hitesh");
-    },2000)
+    // ye setTimeout ek func hai ki itti der ka time do fir kch kaam krege
+    // setTimeout(function(){
+    //     console.log("Hitesh");
+    // },2000)
+
+    //or
+
+    const sayHitesh=function(){
+        console.log("hitesh")
+    }
+
+    setTimeout(sayHitesh,2000)
+
+    const changeText=function(){
+        document.querySelector('h1').innerHTML="best JS series"
+    }
+    const changeMe=setTimeout(changeText,2000)
+    //here ham function ka reference dete hai execute ni krate means sayHitesh() aise ni likhege just sayHitesh
+
+    //how to stop setTimeout()
+    clearTimeout(changeMe)
+    //we have to pass this reference and jitna bhi callback queue me rkha h 
+
+    //par ab hamne setTimeout bhi lagaya and clearTimeout bhi lagaya to uska matlab kya 
+    
+    //to isko ham kisi event pe lgayege 
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+    })
+
 </script>
 </html>
