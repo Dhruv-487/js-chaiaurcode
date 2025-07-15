@@ -1,0 +1,41 @@
+<!-- API- 
+api is a basically a talking language between 2 systems,and these 2 systems can be backend and frontend and many more suppose 2 bat krna chahre h ek java me h ek ruby me h
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+
+    0 UNSENT Client has been created. open() not called yet.
+    1 OPENED open() has been called
+    2 HEADERS_RECIEVED send() has been called, and headers and status are available
+    3 LOADING Downloading; responseText holds partial data 
+    4 done the operation is complete
+</body>
+<script>
+    const requestUrl='https://api.github.com/users/hiteshchoudhary'
+    // ye xml ye h method hai jiske andr sari ready states hoti h and iske through hm data send and recieve kr skte h
+    const xhr=new XMLHttpRequest()
+    // open hi req ko bhejta h
+    xhr.open('GET',requestUrl)
+    
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState===4){
+            //current context k liye this is used
+            const data=JSON.parse(this.responseText);//convert string to object
+            console.log(data.followers);
+        }
+    }
+    // ab open apne aap call nahi hota hai, hme bolna pdega xhr.send()
+    xhr.send()
+
+
+    
+</script>
+</html>
