@@ -131,6 +131,8 @@ getAllUsers();
 */
 
 
+
+/*
 fetch('https://jsonplaceholder.typicode.com/users')
 .then((response)=>{
     return response.json();
@@ -139,3 +141,36 @@ fetch('https://jsonplaceholder.typicode.com/users')
     console.log(data);
 })
 .catch((error)=> console.log(error));
+
+*/
+
+
+// promise se hamne request kri and vha se error aagya 404 to vo fetch  me milega resolve me milega ya reject me milega,
+// vo hmesha response me milega error vo tab hoga us case me jab browser req kr hi nahi paya hai baki isko ni pta ky error
+
+
+
+
+// Jo ham fetch me kam karate hai vo pehle execute hota hai and baki ka sb karnama badme aata hai , asa kyu hora h?
+// bcz ek special queue banti hai sirf fetch ke liye,iska default nam microtask queue (priority queue)
+// ab fetch se j bhi kam hua vo is queue ke andr aaya and is queue ki priority sabse high hoti hai and its a vip line ye jati hai and stack me sbse age aa jati h
+
+//agr same time bhi lgra hai to ye priority vala pehle lia jaygea
+
+
+// fetch sara kam krta hai and iska internal mech 2 part me kam krta hai
+
+//ek part data memory me space reserve krne ke liye bhagta hai do jane bahgte hai fatafat->
+// ek array hota hai onfulfilled(promise ka resolve)- isme array me directly values push krna allowed ni h .... and onRejection(rejection).. ye sab range m hi ni hote 
+
+
+// ek part jata hai web browser - ye ya to web browser ki api acces krega ya fir doosra hai  node ki api network- node base api handle krega - jaha se hame milti hai network req,ab network req hm directly set fire ni kr skte we requires some resource in between either browser or node env will give the resource
+//yha se milti hai ek network req ab ya to data jayega ya ni jayega agr jae kch bhi response aaya to vo hmesha jata h onFulfilled me ya fir vo request ja h nhi payi ya atak gayi req to us case me jake rejection ayega
+
+//hamare jitte bhi errors bhi hai(even 404 bhi) network pe req gayi tbhi to pta lga ki 404 error aya hai to us case me ye data bhi onFulfiled me hi kam krta hai
+
+
+//data memory me reserve rhta hai ,ini value is undefined
+// on rejection and on rejection ky krte hai jab hamara ye kam ho jayge
+// tab is netwrok req se ya to ek fire hoga ya dusra
+//these 2 func are responsibe for data fulfilment,ek bar data agr fulfill krdi to ho jyega
