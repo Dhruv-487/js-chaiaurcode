@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library="React"
+            this.server="https://localhost:300"
+
+            //requirement-jaise hi ye page load ho hmara ek react ka object create ho jaye
+            document.querySelector('button')
+            .addEventListener('click',this.handleClick.bind(this))
+        }
+        handleClick(){
+            console.log("Button Clicked")
+            console.log(this.server);
+            //hamare pas this ka refernce to hai pr jo us button click ka hmne handleCLick dala hai vo ni ara
+            // hmare pas ek special keyword hai bind hme keval bind ka refernce ni dena hai hme ye actual m keyword yhi btara hai ki bindkro apne sath-jo sbkoo join krdeta h
+        }
+    }
+    const app=new React()
+</script>
+</html>
