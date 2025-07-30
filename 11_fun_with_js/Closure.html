@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color : #313131">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function init(){
+    //     let name="chrome";
+    //     function displayName(){
+    //         conosle.log(name);
+    //     }
+    //     displayName();
+    // }
+    // inti();
+
+    // function outer(){
+    //     let username="Dhruv"
+    //     console.log("OUTER ",secret);
+    //     function inner(){
+    //         let secret="12abc"
+    //         console.log(username);
+    //     }
+    //     function innerTwo(){
+    //         conosle.log("innerTwo",username);
+    //         conosle.log(secret);
+    //     }
+    //     inner();
+    //     innerTwo();
+    // }
+    // outer();
+    // console.log("TOO OUTER",username);
+
+
+    //lexical scoping
+    function makeFunc(){
+        const name="Dhruv";
+        function displayName(){
+            console.log(name);
+        }
+        return displayName;
+    }
+
+    const myFunc=makeFunc();
+    myFunc();
+</script>
+<script>
+    // document.getElementById("orange").onclick=function(){
+    //     document.body.style.backgroundColor="orange"
+    // }
+    // document.getElementById("green").onclick=function(){
+    //     document.body.style.backgroundColor="green"
+    // }
+    function clickHandler(color){
+//agr hme closure and lexical scoping ke bare me na pata hoga to sirf ye return valafunc jata poora pass ni hota and us vajah se color ka access ni hota jisse kch run ni krta
+        return function(){
+        document.body.style.backgroundColor=`${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick=clickHandler("orange")
+    document.getElementById('green').onclick=clickHandler("green")
+
+</script>
+</html>
+<!-- closure is the combination of a func bundled together with a references to is currebt stare' -->
+ <!-- closure gives us access to an outer function scope from an inner func -->
+
+ <!-- funcion ke andr kitte  bhi function hote un sabhi ko access milta jo outermost ke adnr vars declare ekiye unka -->
+
+ <!-- jab poora ka poora function hi return  krdete ho to function return ni hota uska poora scope return hota hai and scope ni hai poora lexical scope return hota hai-->
+
+
+
+ 
+<!-- 
+ Lexical scope: kahan likha gaya function, us basis pe variable access milta hai.
+
+Closure: jab function apne lexical scope ke variables ko "remember" krta hai even baad me bhi. -->
